@@ -1,0 +1,81 @@
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+header {
+  @media screen and (max-width: 767px) {
+    background-image: url(../images/abstract-background-with-red-lines.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 230px;
+    padding-top: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    background-image: url(../images/abstract-background-with-red-lines-768.jpg);
+    background-repeat: no-repeat;
+    height: 216px;
+  }
+  @media screen and (min-width: 1280px) {
+    background-image: url(../images/abstract-background-with-red-lines-1200.jpg);
+    background-repeat: no-repeat;
+    height: 216px;
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__list {
+    display: flex;
+  }
+  &__item {
+    &:first-child {
+      margin-right: 39px;
+    }
+  }
+  &__link {
+    color: #fff;
+    text-transform: uppercase;
+    &.active {
+      border-bottom: 3px solid red;
+    }
+  }
+}
+
+.search-form {
+  margin-top: 54px;
+  position: relative;
+  &__input {
+    height: 30px;
+    width: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+  }
+  &__button {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/search.svg);
+    background-color: transparent;
+    border: none;
+    right: 0;
+    &::placeholder {
+      color: #fff;
+    }
+  }
+}
