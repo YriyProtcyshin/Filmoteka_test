@@ -6,7 +6,7 @@ a {
   text-decoration: none;
 }
 
-header {
+.container.header-section {
   @media screen and (max-width: 767px) {
     background-image: url(../images/abstract-background-with-red-lines.jpg);
     background-repeat: no-repeat;
