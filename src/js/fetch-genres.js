@@ -8,5 +8,6 @@ export async function fetchGenres() {
 
   const rest = await fetch(`${url}?${param}`);
   const response = await rest.json();
+
   return response;
 }

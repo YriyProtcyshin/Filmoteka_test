@@ -3,19 +3,32 @@ import { fetchGenres } from './js/fetch-genres';
 import cardListTmp from './templates/card-list.hbs';
 
 const cardListRef = document.querySelector('.card-list');
-let genreList = null;
+let genresList = '';
 
-fetchGenres().then(json => {
-  console.log(json.genres);
-  genreList = json.genres;
-});
+main();
 
-fetchAllMovies().then(json => {
-  markupcardList(json.results);
-});
+async function main() {
+  let genresList = {};
+  let listMovie = '';
+  await fetchGenres().then(data => {
+    data.genres.forEach(item => {
+      genresList[item.id] = item.name;
+    });
+  });
 
-function markupcardList(data) {
-  cardListRef.innerHTML = cardListTmp(data);
+  await fetchAllMovies().then(data => {
+    listMovie = data.results;
+  });
+
+  await markipHtml(genresList, listMovie);
 }
 
-console.log(genreList);
+function markipHtml(genresList, listMovie) {
+  console.log(genresList);
+  console.log(listMovie);
+
+  cardListRef.innerHTML = cardListTmp({
+    listMovie,
+    genresList,
+  });
+}
