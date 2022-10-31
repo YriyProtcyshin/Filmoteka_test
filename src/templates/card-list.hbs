@@ -2,15 +2,21 @@
 {{#each listMovie}}
   <div class='card'>    
     <img class="card__image" src='https://image.tmdb.org/t/p/w500/{{poster_path}}' alt='' />
-    <h1 class="card__title"> {{original_title}} </h1>
+
+    {{#if title}}
+       <h2 class="card__title"> {{title}} </h2>
+    {{else}}
+      <h2 class="card__title"> {{name}} </h2>
+    {{/if}}
+
+
     
-{{!-- {{lookup ../genresList "12"}} --}}
-
-
+     <p class="card__genres">
+      {{#each genre_ids}}  
+        {{lookup ../../genresList @this}}{{#unless @last}}, {{/unless}}
+      {{/each}}
+    </p>
   
-  {{#each genre_ids}}  
-  {{lookup ../../genresList @this}}{{#unless @last}}, {{/unless}}
-  {{/each}}
  
   </div>
 {{/each}} 

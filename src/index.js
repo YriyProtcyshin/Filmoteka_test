@@ -1,5 +1,5 @@
 import { fetchAllMovies } from './js/fetch-all-movies';
-import { fetchGenres } from './js/fetch-genres';
+import { fetchMoviesGenres, fetchTVShowGenres } from './js/fetch-genres';
 import cardListTmp from './templates/card-list.hbs';
 
 const cardListRef = document.querySelector('.card-list');
@@ -10,11 +10,17 @@ main();
 async function main() {
   let genresList = {};
   let listMovie = '';
-  await fetchGenres().then(data => {
+  await fetchMoviesGenres().then(data => {
     data.genres.forEach(item => {
       genresList[item.id] = item.name;
     });
   });
+
+  await fetchTVShowGenres().then(data =>
+    data.genres.forEach(item => {
+      genresList[item.id] = item.name;
+    })
+  );
 
   await fetchAllMovies().then(data => {
     listMovie = data.results;

@@ -1,11 +1,25 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
-h1 {
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0px;
+}
+
+h2 {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
+  margin-top: 16px;
 }
 
 .container {

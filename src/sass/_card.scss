@@ -1,16 +1,27 @@
 .card-list {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: self-start;
+  gap: 26px;
   margin-top: 60px;
   display: flex;
-  justify-content: baseline;
-  flex-wrap: wrap;
-  gap: 16px;
-  align-items: center;
 }
 
 .card {
   width: 395px;
+  margin-bottom: 20px;
   &__image {
     width: 395px;
     height: 574px;
+  }
+
+  &__genres {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #ff6b08;
+    margin-top: 10px;
   }
 }
