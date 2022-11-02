@@ -40,8 +40,8 @@ a {
     display: flex;
   }
   &__item {
-    &:first-child {
-      margin-right: 39px;
+    &:not(:last-child) {
+      margin-right: 30px;
     }
   }
   &__link {
